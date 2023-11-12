@@ -12,7 +12,7 @@ const NewExpenses = ({ addData }) => {
     return (
         <div>
             {!isToggle && (
-                <Button onClick={addExpense} title='Добавить новый расход' className='buttonadd' />
+                <Button onClick={addExpense} title='Добавить новый расход' className='udo3' />
             )}
 
             {isToggle && <ExpenseForm addExpense={addExpense} addData={addData} />}

@@ -24,13 +24,13 @@ const items = [
   }
 ]
 function App() {
-  const [expenses, setExpenses]=useState(items)
-  const addData=(data)=>{
-setExpenses([...expenses,data])
+  const [expenses, setExpenses] = useState(items)
+  const addData = (data) => {
+    setExpenses([...expenses, data])
   }
   return (
     <div>
-      <NewExpenses  addData={addData}/>
+      <NewExpenses addData={addData} />
       <Expenses items={expenses} />
     </div>
   );

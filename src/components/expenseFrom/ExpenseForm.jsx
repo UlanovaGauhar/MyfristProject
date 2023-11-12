@@ -22,20 +22,25 @@ const ExpenseForm = ({ addExpense, addData }) => {
     }
     const addExpenseItem = (e) => {
         e.preventDefault()
-        let items = {
-            title,
-            price,
-            date: new Date(date)
+        if (title.trim() != '' && price.trim() != '' && date.trim() != '') {
+            let items = {
+                title,
+                price,
+                date: new Date(date)
+            }
+            addData(items)
         }
-        addData(items)
+        setTitle('')
+        setPrice(0)
+        setDate('DD/MM/YYYY')
     }
     return (
         <form className="adder">
-            <Form labelTitle='Заголовок' id='title' onChange={titleChangeHandler} />
-            <Form labelTitle='Количество' onChange={priceChangeHandler} type='number' id='price' />
-            <Form labelTitle='Датировать' type='date' id='date' onChange={dateChangeHandler} />
-            <Button onClick={cancelExpenses} variant={className}>отмена </Button>
-            <Button onClick={addExpenseItem}  className='btn'>Добавить расходы</Button>
+            <Form labelTitle='Заголовок' id='title' onChange={titleChangeHandler} value={title} />
+            <Form labelTitle='Количество' onChange={priceChangeHandler} type='number' id='price' value={price} />
+            <Form labelTitle='Датировать' type='date' id='date' onChange={dateChangeHandler} value={date} />
+            <Button onClick={cancelExpenses} >отмена </Button>
+            <Button onClick={addExpenseItem} className='btn'>Добавить расходы</Button>
         </form>
     )
 }

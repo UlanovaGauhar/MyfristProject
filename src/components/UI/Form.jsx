@@ -1,10 +1,10 @@
 import React from "react"
 
-const Form = ({ labelTitle, type = 'text', id, onChange}) => {
+const Form = ({ labelTitle, type = 'text', id, onChange, value}) => {
     return (
         <div>
             <label htmlFor={id}>{labelTitle}</label>
-            <input type={type} id={id} onChange={onChange} />
+            <input value={value} type={type} id={id} onChange={onChange} />
         </div>
     )
 }

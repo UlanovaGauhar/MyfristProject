@@ -1,9 +1,10 @@
 import React from "react";
+import ExpenseDate from "../expense-date/ExpenseDate";
 
 const ExpenseItem = ({ title, price, date }) => {
     return (
         <div className="divver">
-            <p className="date">{date.toString()}</p>
+            <ExpenseDate date={date}/>
             <h4 className="name">{title}</h4>
             <p className="prices">{price}</p>
         </div>
