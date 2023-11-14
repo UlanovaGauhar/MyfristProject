@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import './App.css';
 import Expenses from './components/expenses/Expenses';
+import React from 'react';
 import NewExpenses from './components/new-expenses/NewExpenses';
+import './App.css';
 
 const items = [
   {
